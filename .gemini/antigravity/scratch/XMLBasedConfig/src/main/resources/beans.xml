@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+
+    <bean id="order"
+          name="order1,order2,order3"
+
+          class="com.in.xml.Orde">
+
+<!--
+-->
+<constructor-arg ref="cardps">
+
+</constructor-arg>
+    </bean>
+
+<!--    <bean id="pays" name="pays1" class="com.in.xml.payments.PaymentService">-->
+
+<!--        <constructor-arg index="0" value="Upi">-->
+
+
+
+<!--        </constructor-arg>-->
+<!--        <constructor-arg index="1" value="98353985">-->
+
+<!--        </constructor-arg>-->
+
+<!--    </bean>-->
+
+    <bean id="upips" class="com.in.xml.payments.Upips">
+
+    </bean>
+
+    <bean id="cardps" class="com.in.xml.payments.Cardps">
+
+    </bean>
+
+
+</beans>
