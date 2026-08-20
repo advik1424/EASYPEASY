@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ASSINGMENT-1</h1>
+
+    <div style="border: 10px salmon solid; ">
+
+        <h2 style="text-align: center;">MENU LIST</h2>
+<div style="text-align: center;">
+
+         <ul>
+
+            <li>tea:76</li>
+<li >coffee:82</li>
+<li>milk:65</li>
+<li>juice:90</li>
+<li>water:50</li>
+<li>sandwich:120</li>
+<li>burger:150</li>
+<li>pizza:200</li>
+<li>pasta:180</li>
+<li>noodles:130</li>
+<li>momos:100</li>
+<li>fries:110</li>
+<li>cake:140</li>
+<li>icecream:95</li>
+<li>cookie:60</li>
+            
+        </ul>
+</div >
+
+<div style="text-align: center;"> <button onclick="Calculate()">Proceed to Buy</button>
+
+</div>
+   
+    </div>
+
+    
+
+
+    <script>
+
+
+
+       const menu = {
+    tea: 76,
+    coffee: 172,
+    milk: 65,
+    juice: 90,
+    water: 50,
+    sandwich: 120,
+    burger: 150,
+    pizza: 200,
+    pasta: 180,
+    noodles: 130,
+    momos: 100,
+    fries: 110,
+    cake: 140,
+    icecream: 95,
+    cookie: 60
+};
+function Calculate(){
+
+    let name =String(promt("Enter your name"));
+    let no =String(prompt("Enter your no."));
+
+        let x=prompt("Enter the item you need");
+
+        let y=Number(prompt("Enter the quantity you needed"));
+
+
+        document.write(`
+    <div style="width:500px; margin:auto; border:3px solid black; padding:20px;">
+        
+        <h1 style="text-align:center;">YOUR BILL</h1>
+
+        <h1>Costumer Detail</h1>
+
+        <p>${name}</p>
+        <p>${no}</p>
+        
+
+        <hr>
+
+        <p><b>Item:</b> ${x}</p>
+        <p><b>Price:</b> ₹${menu[x]}</p>
+        <p><b>Quantity:</b> ${y}</p>
+        
+        
+
+        <hr>
+
+        <h2> Total: ₹${menu[x] * y}</h2>
+
+    </div>
+`);
+
+        
+}
+
+    </script>
+
+
+    
+</body>
+</html>
