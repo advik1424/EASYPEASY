@@ -1,0 +1,21 @@
+#spring.application.name=profileappilaction
+#server.port=8082
+#app.welcome.message=Hello, Welcome to my application
+
+spring:
+  application:
+    name:profiledemo
+
+
+server:
+  port:8082
+
+
+app:
+  welcome:
+    message: Hello ,welcome to my application
+    code: 200
+    list: name
+    user: student
+
+
