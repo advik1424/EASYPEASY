@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Database</title>
+</head>
+
+<body>
+
+<input type="text" id="name" placeholder="Enter name">
+<input type="number" id="class" placeholder="Enter class">
+<input type="number" id="fee" placeholder="Enter fee">
+
+<button onclick="addStudent()">Add Student</button>
+
+<div id="output"></div>
+
+<script>
+
+function addStudent() {
+
+    const name = document.getElementById("name").value;
+    const studentClass = document.getElementById("class").value;
+    const fee = document.getElementById("fee").value;
+
+    const student = {
+        name: name,
+        class: studentClass,
+        fee: fee
+    };
+
+    let students = JSON.parse(localStorage.getItem("student")) || [];
+
+    students.push(student);
+
+    localStorage.setItem("student", JSON.stringify(students));
+
+    displayStudents();
+}
+
+function displayStudents() {
+
+    const data = JSON.parse(localStorage.getItem("student")) || [];
+
+    let output = "";
+
+    data.map((student) => {
+        output += `
+            Name: ${student.name}<br>
+            Class: ${student.class}<br>
+            Fee: ${student.fee}<br><br>
+        `;
+    });
+
+    document.getElementById("output").innerHTML = output;
+}
+
+displayStudents();
+
+</script>
+
+</body>
+</html>

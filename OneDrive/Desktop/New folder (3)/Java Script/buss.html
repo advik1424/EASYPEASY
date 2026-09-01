@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking System</title>
+</head>
+<body>
+    <Style>
+        p{
+            margin-left: 15px;
+            color: white;
+        }
+
+        h3{
+            margin-left: 50px;
+            color: brown;
+
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+}
+
+
+        
+    </Style>
+    
+    <div
+    style="border: 2px solid red; width: 400px ;height: 900px;background-color: blueviolet;"><center>
+
+        <img src="image.png" alt="Bus Booking Logo" class="logo">
+
+        <h1>Bus Booking System</h1>
+
+        <h3>User Information </h3>
+        <p>User Name:<input type="text" id="name"></p>
+        <p>User Age :<input type="text"></p>
+        <p>Addhar No.<input type="text"></p>
+        <p>Select Your City:
+            <select name="" id="city">
+             <option value="GZB">GZB</option>
+              <option value="LKO">LKO</option>
+               <option value="DEL">DEL</option>
+               <option value="MUM">MUM</option>
+                <option value="PUN">PUN</option> 
+                <option value="Himanchal">Himachal</option>
+                 <option value="J&K">J&K</option>
+
+             </select>
+    </p>
+
+        <p>Select your travelling date:<input type="date" id="date"></p>
+        <h3>Bus Information</h3>
+        
+
+<p>Select your bus type:</p>
+
+<p>
+    AC BUS: 2000
+    <input type="radio" id="bus_ac" name="bus" value="2992">
+</p>
+
+<p>
+    NON-AC BUS:1600
+    <input type="radio" id="bus_nonac" name="bus" value="1600">
+</p>
+
+<p>
+    Select your Seat:
+
+    <select name="" id="seat">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</p>
+       
+
+       
+
+
+<p>
+    <button onclick="savethedata()">Click to save</button></p>
+    </center>
+
+</div>
+
+<script>
+
+    function savethedata(){
+
+
+        
+        let name=document.getElementById("name").value;
+        let city=document.getElementById("city").value;
+        let date=document.getElementById("date").value;
+        
+        let selectedRadio = document.querySelector('input[name="bus"]:checked');
+        let typebuss = (selectedRadio.id === "bus_ac") ? "AC Bus" : "Non-AC Bus";
+      
+
+        let seat=document.getElementById("seat").value;
+
+         let ticketPrice = parseInt(selectedRadio.value);
+         let totalprice= seat*ticketPrice;
+
+
+
+
+
+        alert(
+
+        "Welcome to our buss\n"+
+        "Name: " + name + "\n" +
+            "City: " + city + "\n" +
+            "Date: " + date + "\n" +
+            "Bus Type: " + typebuss + "\n" +
+            "Seat No: " + seat +"\n"+
+            "Total Amount\n"+
+            "Your amount is:"+totalprice+"\n"
+
+
+
+        );
+
+    }
+</script
+</body>
+</html>
